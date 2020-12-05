@@ -13,7 +13,7 @@ const { exec } = require('child_process');
 const chalk = require('react-dev-utils/chalk');
 
 // Ensure environment variables are read.
-require('./env');
+require('../config/env');
 
 const s3Bucket = process.env.AWS_S3_BUCKET;
 
