@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useCallback } from 'react';
 import './App.css';
+import styled from 'styled-components';
+
+const StyledApp = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+
+const stepText = {
+  step1: 'step 1 text',
+  step2: 'step 2 text',
+  step3: 'step 3 text',
+}
 
 function App() {
+
+  const handleClick = useCallback(e => {
+    console.log('click', e)
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp>
+      <header />
+      <main>
+        <h1>Hi Ada</h1>
+        <div>
+        <button onClick={handleClick}>Click Me</button>
+        </div>
+      </main>
+    </StyledApp>
   );
 }
 
